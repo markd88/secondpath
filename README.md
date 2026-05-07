@@ -1,16 +1,33 @@
+<p align="center">
+  <img src=".github/assets/secondpath-banner.svg" alt="SecondPath banner" width="100%" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/markd88/secondpath/actions/workflows/ci.yml">
+    <img src="https://github.com/markd88/secondpath/actions/workflows/ci.yml/badge.svg" alt="CI" />
+  </a>
+  <img src="https://img.shields.io/github/v/release/markd88/secondpath" alt="release" />
+  <img src="https://img.shields.io/badge/python-3.9%2B-3776AB" alt="python" />
+  <img src="https://img.shields.io/badge/license-MIT-green" alt="license" />
+</p>
+
 # SecondPath
 
 > Every AI workflow needs a second path.
 
 SecondPath is a lightweight runtime layer for user-facing AI workflows.
 
-It helps you separate:
+It separates:
 - AI/model optimization logic (best path)
 - product fallback logic (delivery under failure)
 
 In one line:
 
 `primary -> detect -> fallback_chain -> sinks`
+
+## Requirements
+
+- Python `>=3.9`
 
 ## Install
 
@@ -80,6 +97,12 @@ Run any example:
 ```bash
 python3 examples/website_creative.py
 ```
+
+## Why this exists
+
+Most teams optimize their AI path but leave product fallback scattered across business code.
+
+SecondPath makes fallback explicit, composable, and observable without forcing a new workflow framework.
 
 ## Core Concepts
 

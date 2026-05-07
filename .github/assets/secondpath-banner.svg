@@ -1,0 +1,31 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1020"/>
+      <stop offset="1" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="220" y1="170" x2="1060" y2="470" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#34D399"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="640" rx="24" fill="url(#bg)"/>
+
+  <rect x="160" y="140" width="960" height="360" rx="18" fill="#0F172A" stroke="#334155"/>
+
+  <path d="M250 280H520" stroke="#38BDF8" stroke-width="6" stroke-linecap="round"/>
+  <path d="M600 280H870" stroke="#38BDF8" stroke-width="6" stroke-linecap="round"/>
+  <path d="M950 280H1030" stroke="#38BDF8" stroke-width="6" stroke-linecap="round"/>
+
+  <circle cx="230" cy="280" r="18" fill="#38BDF8"/>
+  <circle cx="580" cy="280" r="18" fill="#34D399"/>
+  <circle cx="930" cy="280" r="18" fill="#F59E0B"/>
+  <circle cx="1050" cy="280" r="18" fill="#E879F9"/>
+
+  <text x="640" y="225" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="56" font-weight="700" fill="white">SecondPath</text>
+  <text x="640" y="350" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="26" fill="#C7D2FE">Every AI workflow needs a second path</text>
+  <text x="640" y="395" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="20" fill="#94A3B8">primary → detect → fallback_chain → sinks</text>
+
+  <rect x="465" y="438" width="350" height="10" rx="5" fill="url(#accent)"/>
+</svg>
