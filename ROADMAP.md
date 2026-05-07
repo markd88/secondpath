@@ -8,25 +8,28 @@ Goal:
 
 Includes:
 
-- `protect(...)`
-- sequential `fallback_chain`
-- basic detectors
-- basic sinks
-- canonical website-to-creative example
-- focused runtime/configuration/sink tests
+- `protect(...)` ✅
+- sequential `fallback_chain` ✅
+- basic detectors ✅
+- basic sinks ✅
+- canonical website-to-creative example ✅
+- focused runtime/configuration/sink tests ✅
+- human-review queue example (`support_chatbot_queue.py`) ✅
 
 ## Next Likely Steps
 
-1. Add one more example
-- human review represented as a sink-backed queue instead of a fallback layer
-
-2. Improve incident ergonomics
+1. Improve incident ergonomics
 - richer summaries
 - clearer sink failure reporting
 
-3. Improve developer ergonomics
+2. Improve developer ergonomics
 - clearer docs
 - optional helper adapters for fallback handlers
+
+3. Launch readiness
+- package/release workflow for PyPI
+- release notes + versioning policy
+- benchmark-style example showing degraded-but-delivered outcomes
 
 ## Explicitly Deferred
 

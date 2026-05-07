@@ -104,6 +104,19 @@ Most teams optimize their AI path but leave product fallback scattered across bu
 
 SecondPath makes fallback explicit, composable, and observable without forcing a new workflow framework.
 
+## Build in-house vs SecondPath
+
+| Dimension | Build in-house | With SecondPath |
+| --- | --- | --- |
+| Initial flexibility | Maximum freedom for one team and one use case | Opinionated runtime contract (`primary -> detect -> fallback_chain -> sinks`) |
+| Time to first reliable fallback | Fast for a single path, slower as edge cases grow | Fast start with reusable detectors, layers, and sinks |
+| Cross-project consistency | Drifts across services and teams | Shared execution model and incident shape |
+| Observability of failures | Usually ad hoc logs and custom payloads | Structured incidents + pluggable sinks |
+| Error boundary discipline | Easy to mix model logic and product fallback logic | Clear separation between optimization path and delivery fallback |
+| Maintenance cost over time | Grows with duplicated glue code | Centralized runtime behavior, tests, and examples |
+
+If you only have one simple workflow, in-house may be enough. If you operate multiple user-facing AI paths, SecondPath helps standardize fallback behavior without introducing a full workflow platform.
+
 ## Core Concepts
 
 - `protect(...)`: wrap one execution unit
@@ -129,7 +142,8 @@ In scope:
 - sync runtime (`protect(...)`)
 - sequential fallback chains
 - core detectors/sinks
-- examples + focused tests
+- examples (including sink-backed human-review queue pattern)
+- focused runtime/configuration/sink tests
 
 Not in scope:
 - workflow engine / graph runtime

@@ -8,3 +8,4 @@ build/
 *.egg-info/
 incidents.db
 LOCAL_TODO.md
+SESSION_PROGRESS.md
