@@ -13,23 +13,38 @@
 
 # SecondPath
 
-> Every AI workflow needs a second path.
+> Separate AI optimization from product fallback.
 
-SecondPath is a lightweight runtime layer for user-facing AI workflows.
+SecondPath is a design principle for user-facing AI systems.
 
-It separates:
-- AI/model optimization logic (best path)
-- product fallback logic (delivery under failure)
+Most teams optimize the best AI path and leave fallback scattered across product
+code. SecondPath argues these should be designed separately:
 
-In one line:
+- AI path: optimize quality, latency, and cost
+- Product path: guarantee delivery when the AI path fails, degrades, times out,
+  or returns something unusable
+
+Model success is not the same as product success. The best path should not be
+the only path.
+
+This repository contains a lightweight Python reference implementation of that
+pattern:
 
 `primary -> detect -> fallback_chain -> sinks`
 
-## Requirements
+## Why This Exists
+
+Most teams optimize the AI path but leave fallback scattered across product
+code. SecondPath makes fallback explicit, so delivery does not collapse when
+the model path fails.
+
+## Reference Implementation
+
+Requirements:
 
 - Python `>=3.9`
 
-## Install
+Install:
 
 ```bash
 pip3 install -e .
@@ -41,7 +56,7 @@ After PyPI release:
 pip install secondpath
 ```
 
-## Quick Start
+Quick start:
 
 ```python
 from secondpath import FallbackLayer, protect
@@ -98,45 +113,7 @@ Run any example:
 python3 examples/website_creative.py
 ```
 
-## Why this exists
-
-Most teams optimize their AI path but leave product fallback scattered across business code.
-
-SecondPath makes fallback explicit, composable, and observable without forcing a new workflow framework.
-
-## Build in-house vs SecondPath
-
-| Dimension | Build in-house | With SecondPath |
-| --- | --- | --- |
-| Initial flexibility | Maximum freedom for one team and one use case | Opinionated runtime contract (`primary -> detect -> fallback_chain -> sinks`) |
-| Time to first reliable fallback | Fast for a single path, slower as edge cases grow | Fast start with reusable detectors, layers, and sinks |
-| Cross-project consistency | Drifts across services and teams | Shared execution model and incident shape |
-| Observability of failures | Usually ad hoc logs and custom payloads | Structured incidents + pluggable sinks |
-| Error boundary discipline | Easy to mix model logic and product fallback logic | Clear separation between optimization path and delivery fallback |
-| Maintenance cost over time | Grows with duplicated glue code | Centralized runtime behavior, tests, and examples |
-
-If you only have one simple workflow, in-house may be enough. If you operate multiple user-facing AI paths, SecondPath helps standardize fallback behavior without introducing a full workflow platform.
-
-## Core Concepts
-
-- `protect(...)`: wrap one execution unit
-- `primary`: preferred execution strategy (can be complex internally)
-- `detect`: decide whether primary result is acceptable
-- `fallback_chain`: ordered acceptable alternatives
-- `sinks`: incident routing (stdout/webhook/slack/sqlite/mq)
-
-Handler contract:
-- `plan.run(*args, **kwargs)` inputs are forwarded to primary and fallback handlers
-- handlers may optionally accept `context=` to read runtime info (`primary_output`, `primary_error`, `failure_type`, `artifacts`)
-
-## Error Handling Policy
-
-- Execution/runtime failures may degrade through fallback layers
-- Configuration mistakes fail fast (`ConfigurationError`)
-- Detector crashes fail fast (`DetectorError`)
-- Sink errors are best effort and do not block main execution
-
-## Scope (v0.1-alpha)
+## Reference Implementation Scope (v0.1-alpha)
 
 In scope:
 - sync runtime (`protect(...)`)
