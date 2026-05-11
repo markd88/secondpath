@@ -1,0 +1,86 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1a1a2e"/>
+      <stop offset="0.5" stop-color="#16213e"/>
+      <stop offset="1" stop-color="#0f3460"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(400 300) scale(500 400)">
+      <stop stop-color="#e94560" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#e94560" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1200 600) scale(500 400)">
+      <stop stop-color="#4a90d9" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#4a90d9" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cardGood" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop stop-color="#1e3a5f"/>
+      <stop offset="1" stop-color="#162d4a"/>
+    </linearGradient>
+    <linearGradient id="cardBad" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop stop-color="#3d1a1a"/>
+      <stop offset="1" stop-color="#2d1414"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="20" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <ellipse cx="400" cy="300" rx="500" ry="400" fill="url(#glow1)"/>
+  <ellipse cx="1200" cy="600" rx="500" ry="400" fill="url(#glow2)"/>
+
+  <!-- Left card: Model Success -->
+  <g filter="url(#shadow)">
+    <rect x="180" y="220" width="480" height="360" rx="24" fill="url(#cardGood)" stroke="#2a5a8f" stroke-opacity="0.4" stroke-width="1.5"/>
+  </g>
+  <!-- Card header -->
+  <rect x="180" y="220" width="480" height="60" rx="24" fill="#24466b"/>
+  <rect x="180" y="256" width="480" height="24" fill="#24466b"/>
+  <text x="420" y="258" text-anchor="middle" fill="#8ab4d6" font-family="SF Pro Display, Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="600" letter-spacing="1">MODEL RESPONSE</text>
+
+  <!-- JSON blob -->
+  <rect x="220" y="304" width="400" height="16" rx="4" fill="#254a6e"/>
+  <rect x="220" y="336" width="400" height="16" rx="4" fill="#1e3d5c"/>
+  <rect x="244" y="352" width="140" height="16" rx="4" fill="#2ecc71" fill-opacity="0.85"/>
+  <rect x="220" y="384" width="400" height="16" rx="4" fill="#1e3d5c"/>
+  <rect x="244" y="400" width="280" height="16" rx="4" fill="#2ecc71" fill-opacity="0.85"/>
+  <rect x="220" y="432" width="400" height="16" rx="4" fill="#254a6e"/>
+  <rect x="220" y="464" width="400" height="16" rx="4" fill="#1e3d5c"/>
+  <rect x="244" y="480" width="200" height="16" rx="4" fill="#2ecc71" fill-opacity="0.85"/>
+
+  <!-- Checkmark -->
+  <circle cx="420" cy="540" r="28" fill="#2ecc71" fill-opacity="0.15" stroke="#2ecc71" stroke-width="3"/>
+  <path d="M406 540L415 549L435 531" stroke="#2ecc71" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- VS divider -->
+  <text x="800" y="420" text-anchor="middle" fill="#4a5568" font-family="SF Pro Display, Helvetica Neue, Arial, sans-serif" font-size="32" font-weight="700" letter-spacing="4">VS</text>
+
+  <!-- Right card: Product Failure -->
+  <g filter="url(#shadow)">
+    <rect x="940" y="220" width="480" height="360" rx="24" fill="url(#cardBad)" stroke="#6b2a2a" stroke-opacity="0.4" stroke-width="1.5"/>
+  </g>
+  <!-- Card header -->
+  <rect x="940" y="220" width="480" height="60" rx="24" fill="#4d2020"/>
+  <rect x="940" y="256" width="480" height="24" fill="#4d2020"/>
+  <text x="1180" y="258" text-anchor="middle" fill="#cc8888" font-family="SF Pro Display, Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="600" letter-spacing="1">WHAT THE USER SEES</text>
+
+  <!-- Empty ad slot -->
+  <rect x="1020" y="300" width="320" height="200" rx="12" fill="#2a1818" stroke="#4a2828" stroke-width="1.5" stroke-dasharray="8 6"/>
+  <!-- Dashed border box -->
+  <rect x="1080" y="340" width="200" height="24" rx="4" fill="#3d1a1a"/>
+  <rect x="1080" y="384" width="200" height="14" rx="4" fill="#3d1a1a"/>
+  <rect x="1080" y="410" width="160" height="14" rx="4" fill="#3d1a1a"/>
+  <rect x="1080" y="436" width="120" height="14" rx="4" fill="#3d1a1a"/>
+
+  <!-- Empty indicator -->
+  <text x="1180" y="540" text-anchor="middle" fill="#cc8888" font-family="SF Pro Display, Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="500">ad slot is blank</text>
+
+  <!-- Bottom text -->
+  <text x="800" y="720" text-anchor="middle" fill="#e0e0e0" font-family="SF Pro Display, Helvetica Neue, Arial, sans-serif" font-size="46" font-weight="800" letter-spacing="2">THE MODEL WORKED.</text>
+  <text x="800" y="780" text-anchor="middle" fill="#e94560" font-family="SF Pro Display, Helvetica Neue, Arial, sans-serif" font-size="46" font-weight="800" letter-spacing="2">THE PRODUCT FAILED.</text>
+
+  <!-- Subtitle -->
+  <text x="800" y="840" text-anchor="middle" fill="#6a7a94" font-family="SF Pro Display, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="400" letter-spacing="0.5">Why user-facing AI needs an explicit fallback path</text>
+</svg>

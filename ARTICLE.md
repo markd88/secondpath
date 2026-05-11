@@ -2,6 +2,8 @@
 
 *Why user-facing AI systems need an explicit fallback path*
 
+![SecondPath cover](https://raw.githubusercontent.com/markd88/secondpath/main/article-assets/secondpath-cover-minimal.svg)
+
 ---
 
 It's Black Friday. Your e-commerce platform generates AI-powered ads for 50,000 merchants — headlines, images, the products. A merchant uploads a product page. Your model reads it, understands what they are selling, and writes a headline that converts. In staging, everything looks great: sharp copy, strong images, low latency. You ship it with confidence.
