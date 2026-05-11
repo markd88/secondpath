@@ -2,7 +2,7 @@
 
 *Why user-facing AI systems need an explicit fallback path*
 
-![SecondPath cover](https://raw.githubusercontent.com/markd88/secondpath/main/article-assets/secondpath-cover-minimal.svg)
+![SecondPath cover](https://raw.githubusercontent.com/markd88/secondpath/main/article-assets/secondpath-cover-minimal.png)
 
 ---
 
